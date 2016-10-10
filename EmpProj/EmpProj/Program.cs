@@ -10,6 +10,9 @@ namespace EmpProj
     {
         static void Main(string[] args)
         {
+
+            string UserInput;
+
             Department myDepart = new Department();
             myDepart.DeptName = "Freddy Fazbear Security Manager";
             myDepart.ChangeDeptName("FF Security");
@@ -68,9 +71,38 @@ namespace EmpProj
 
             Util.Pay([Emp] newArray);
 
+            List<Employee> myEmpList = new List<Employee>();
+            Console.WriteLine("Enter your emp.");
+            Console.WriteLine();
+            while (AddNewEmp(UserInput))
+            {
+                for (int i = 0; i<= myEmpList.Count; i++)
+                {
+                    myEmpList.Add(new Employee());
+                    myEmpList[i].firstName = Console.ReadLine();
+                }
+            }
+
+            Console.WriteLine("Want to add another emp? y|n?");
+
             Console.ReadLine();
 
-         
+        }
+        static bool AddNewEmp(string x)
+        {
+            if (x == "y") 
+            {
+                return true;
+            }
+            else if (x == "n")
+            {
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("Only two choices here, y|n");
+                return false;
+            }
         }
     }
 }
