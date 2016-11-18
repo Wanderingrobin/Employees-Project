@@ -8,6 +8,8 @@ namespace EmpProj
 {
     public class Program
     {
+        public static Employee[] newArray { get; private set; }
+
         static void Main(string[] args)
         {
 
@@ -37,7 +39,7 @@ namespace EmpProj
             emp5.firstName = "Mark";
             emp5.lastName = "Fischbach";
 
-            emp1.changeName("Nachelle", "Allen");
+            emp1.ChangeName("Nachelle", "Allen");
 
             Employee[] ffArray = new Employee[5];
             ffArray[0] = emp1;
@@ -69,12 +71,12 @@ namespace EmpProj
             Console.WriteLine(emp5 + "was hired in on" + emp5.DateHired.ToShortDateString() + " and terminated on " + emp5.TermDate.ToShortDateString());
             Console.WriteLine();
 
-            Util.Pay([Emp] newArray);
+            Util.Pay(newArray);
 
             List<Employee> myEmpList = new List<Employee>();
             Console.WriteLine("Enter your emp.");
             Console.WriteLine();
-            while (AddNewEmp(UserInput))
+            while (AddNewEmp("User Input"))
             {
                 for (int i = 0; i<= myEmpList.Count; i++)
                 {

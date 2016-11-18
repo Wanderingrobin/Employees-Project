@@ -66,6 +66,14 @@ namespace EmpProj
 
         public string firstName { get; internal set; }
 
+        public string lastName { get; internal set; }
+
+        public virtual void ChangeName(string newFirstName, string newLastName)
+        {
+            this.firstName = newFirstName;
+            this.lastName = newLastName;
+        }
+
         public virtual void Hired(DateTime hDate)
         {
             dateHired = hDate.AddYears(-1);
