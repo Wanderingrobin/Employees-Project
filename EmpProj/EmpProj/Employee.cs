@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmpProj
 {
-    public class Employee
+    public class Employee : Person
     {
         DateTime dateHired;
         DateTime termDate;
@@ -64,16 +64,11 @@ namespace EmpProj
             }
         }
 
-        public string firstName { get; internal set; }
-
-        public string lastName { get; internal set; }
-
-        public virtual void ChangeName(string newFirstName, string newLastName)
+        public virtual void ChangeGrade(int newGrade)
         {
-            this.firstName = newFirstName;
-            this.lastName = newLastName;
+            grade = newGrade;
         }
-
+      
         public virtual void Hired(DateTime hDate)
         {
             dateHired = hDate.AddYears(-1);
@@ -88,11 +83,6 @@ namespace EmpProj
         public void Raise(Double money)
         {
             payRate = money * 1.04;
-        }
-
-        internal void ChangeGrade(int v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

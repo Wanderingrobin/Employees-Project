@@ -25,7 +25,7 @@ namespace EmpProj
             }
             set
             {
-                FirstName = value;
+                firstName = value;
             }
         }
 
@@ -37,7 +37,7 @@ namespace EmpProj
             }
             set
             {
-                LastName = value;
+                lastName = value;
             }
         }
 
